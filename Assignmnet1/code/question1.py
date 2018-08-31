@@ -5,7 +5,7 @@ import re
 # the function of read data from given csv file
 def read_data(file_name):
     data_set = []
-    # regularization to not read the 
+    # regularization to not read the heading column
     pattern = re.compile(r'^[-+]?[-0-9]\d*\.\d*|[-+]?\.?[0-9]\d*$')
     with open(file_name, newline='') as csvfile:
         data_file = csv.reader(csvfile)
@@ -21,7 +21,7 @@ def read_data(file_name):
 
 # for loop to calculate the w_hat and b_hat of the second neural network
 for i in range(97,102):
-    # ASCII for control character from a to e
+    # ASCII for controlling characters from a to e
     # formatted output
     a_b = read_data('../data/question_1/%c/%c_b.csv'%(i,i))
     a_w = read_data('../data/question_1/%c/%c_w.csv'%(i,i))
