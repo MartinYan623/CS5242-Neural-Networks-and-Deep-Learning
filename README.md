@@ -1,4 +1,4 @@
-This is all my assignments of the module CS5242 and there are one warm up and three assignments.
+These are all my assignments of the module CS5242 and there are one warm up and three assignments.
 
 Warm up task is not graded, for another three assignment, and each one is 8% of full mark.
 
@@ -20,8 +20,8 @@ There are some logs about my assignments as follows:
 
 The reference link : https://www.coursera.org/learn/neural-networks-deep-learning/notebook/NI888/planar-data-classification-with-a-hidden-layer
 
-8.31 Complete assignment1 question1. use given w and b value of first neural network to calculate the w and b value of the second
+8.31 Complete assignment1 question1. use given w and b value of first neural network to calculate the w and b value of
 
-neural network without hidden layers.
+the second neural network without hidden layers.
 
 
