@@ -1,8 +1,7 @@
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn import datasets, cross_validation, metrics
+
 def read_data():
     x_train = []
     y_train= []
@@ -45,6 +44,11 @@ def read_data():
     y_train = np.array(y_train)
     x_test = np.array(x_test)
     y_test = np.array(y_test)
+    x_train = np.transpose(x_train)
+    y_train = np.transpose(y_train)
+    x_test = np.transpose(x_test)
+    y_test = np.transpose(y_test)
+
     return x_train, y_train, x_test, y_test
 
 def initialize_parameters_deep(layer_dims):
@@ -159,8 +163,9 @@ def L_model_backward(AL, Y, caches):
         grads["db" + str(l + 1)] = db_temp
     return grads
 
-def update_parameters(parameters, grads, learning_rate):
+def update_parameters(parameters, grads, learning_rate,decay=1.0):
     L = len(parameters) // 2  # number of layers in the neural network
+    learning_rate *= decay
     for l in range(L):
         parameters["W" + str(l + 1)] = parameters["W" + str(l + 1)] - learning_rate * grads["dW" + str(l + 1)]
         parameters["b" + str(l + 1)] = parameters["b" + str(l + 1)] - learning_rate * grads["db" + str(l + 1)]
@@ -174,24 +179,25 @@ def initialize_velocity(parameters):
         v["db" + str(l + 1)] = np.zeros((parameters['b' + str(l + 1)].shape))
     return v
 
-def update_parameters_with_momentum(parameters, grads, v, beta, learning_rate):
+def update_parameters_with_momentum(parameters, grads, v, learning_rate , beta=0.95, decay=1.0):
     L = len(parameters) // 2
 
     for l in range(L):
         v["dW" + str(l + 1)] = (beta * v["dW" + str(l + 1)]) + ((1 - beta) * grads['dW' + str(l + 1)])
         v["db" + str(l + 1)] = (beta * v["db" + str(l + 1)]) + ((1 - beta) * grads['db' + str(l + 1)])
-
+        learning_rate *= decay
         parameters["W" + str(l + 1)] = parameters["W" + str(l + 1)] - (learning_rate * v["dW" + str(l + 1)])
         parameters["b" + str(l + 1)] = parameters["b" + str(l + 1)] - (learning_rate * v["db" + str(l + 1)])
 
     return parameters, v
 
-def L_layer_model(X, Y,x,y,layers_dims, learning_rate=0.1, num_iterations=3000, print_cost=False, beta = 0.9, optimizer=None):  # lr was 0.009
+def L_layer_model(network_name,X, Y,x,y,layers_dims, learning_rate=0.01, num_iterations=3000, print_cost=False, beta = 0.95, optimizer=None):  # lr was 0.009
     # keep track of cost
     train_costs = []
     train_accuracies = []
     test_costs = []
     test_accuracies = []
+    iterations=[]
 
     parameters = initialize_parameters_deep(layers_dims)
     # Loop (gradient descent)
@@ -207,9 +213,9 @@ def L_layer_model(X, Y,x,y,layers_dims, learning_rate=0.1, num_iterations=3000, 
         grads = L_model_backward(AL, Y, caches)
         # Update parameters.
         if optimizer == "momentum":
-            parameters, v = update_parameters_with_momentum(parameters, grads, v, beta, learning_rate)
+            parameters, v = update_parameters_with_momentum(parameters, grads, v,learning_rate,beta, decay=0.99995)
         else:
-            parameters = update_parameters(parameters, grads, learning_rate)
+            parameters = update_parameters(parameters, grads, learning_rate,decay=0.99995)
 
         train_accuracy = predict(X,Y, parameters)
 
@@ -228,6 +234,7 @@ def L_layer_model(X, Y,x,y,layers_dims, learning_rate=0.1, num_iterations=3000, 
             train_costs.append(train_cost)
             train_accuracies.append(train_accuracy)
 
+
         if print_cost and i % 100 == 0:
             print("Test cost after iteration %i:" % (i) + str(test_cost))
             print("Test accuracy after iteration %i:" % (i) + str(test_accuracy))
@@ -235,63 +242,39 @@ def L_layer_model(X, Y,x,y,layers_dims, learning_rate=0.1, num_iterations=3000, 
         if print_cost and i % 100 == 0:
             test_costs.append(test_cost)
             test_accuracies.append(test_accuracy)
+            iterations.append(i)
 
-
-    # plot the train cost
-    plt.plot(np.squeeze(train_costs), label='train data')
+    # plot the train and test loss
+    plt.plot(iterations,train_costs, '-b', label='train data')
+    plt.plot(iterations,test_costs,'-r', label='test data')
     plt.legend(loc='upper right')
-    plt.ylabel('cost')
-    plt.xlabel('iterations (per 100)')
-    plt.title("Learning rate = " + str(learning_rate))
-    plt.show()
-
-    # plot the test cost
-    plt.plot(np.squeeze(test_costs), label='test data')
-    plt.legend(loc='upper right')
-    plt.ylabel('cost')
-    plt.xlabel('iterations (per 100)')
-    plt.title("Learning rate = " + str(learning_rate))
+    plt.ylabel('Loss')
+    plt.xlabel('Iterations')
+    plt.title("Loss for "+ network_name + ",Learning rate = " + str(learning_rate))
     plt.show()
 
     # plot the train and test accuracy
-    plt.plot(np.squeeze(train_accuracies), '-b', label='train data')
-    plt.plot(np.squeeze(test_accuracies), '-r', label='test data')
+    plt.plot(iterations,train_accuracies, '-b', label='train data')
+    plt.plot(iterations,np.squeeze(test_accuracies), '-r', label='test data')
     plt.legend(loc='lower right')
-    plt.ylabel('accuracy')
-    plt.xlabel('iterations (per 100)')
-    plt.title("Learning rate = " + str(learning_rate))
+    plt.ylabel('Accuracy')
+    plt.xlabel('Iterations')
+    plt.title("Accuracy for"+ network_name + ",Learning rate = " + str(learning_rate))
     plt.show()
 
     return parameters
 
-layers_dims = [14,100,40,4]
-x_train,y_train,x_test,y_test =read_data()
-x_train=np.transpose(x_train)
-y_train=np.transpose(y_train)
-x_test=np.transpose(x_test)
-y_test=np.transpose(y_test)
+
+
 
 def predict(X, Y, parameters):
     m = X.shape[1]
-    p = np.zeros((4, m))
+    pred = np.zeros((4, m))
     prob, caches = L_model_forward(X, parameters)
-    for i in range(0, prob.shape[0]):
-        for j in range(0,prob.shape[1]):
-            if prob[i, j] > 0.8:
-                p[i, j] = 1
-            else:
-                p[i, j] = 0
-
-    accuracy = np.sum((p == Y) / (4 * m))
-    #accuracy = metrics.accuracy_score(p,Y)
+    p = np.argmax(prob, axis=0)
+    for i in range(0, prob.shape[1]):
+        pred[p[i],i]=1
+    accuracy = np.sum((pred == Y) / (4 * m))
     return accuracy
 
-parameters = L_layer_model(x_train,y_train,x_test,y_test, layers_dims, num_iterations = 2000, print_cost = True,beta=0.9,optimizer='momentum')
-AL,caches=L_model_forward(x_test, parameters)
 
-print(AL)
-y_true = np.argmax(AL, axis=0)
-print(y_true)
-
-dataframe=pd.DataFrame({'perdctions':y_true})
-dataframe.to_csv('/Users/martin_yan/Desktop/aa.csv', index=False, encoding="utf_8_sig")
