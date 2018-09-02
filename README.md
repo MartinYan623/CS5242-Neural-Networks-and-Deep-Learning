@@ -8,8 +8,11 @@ CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                         --- Assignment1|-----code
                                                        |-----data|----question_1
                                                                  |----question_2_1
+                                                                 |----question_2_2_b
+                                                                 |----question_2_2_c
                                                        |-----Question_1
                                                        |-----Question_2
+                                                       |-----reference
                                         --- Assignment2|
                                         --- Assignment3|
 
@@ -23,5 +26,14 @@ The reference link : https://www.coursera.org/learn/neural-networks-deep-learnin
 8.31 Complete assignment1 question1. use given w and b value of first neural network to calculate the w and b value of
 
 the second neural network without hidden layers.
+
+9.1 Build my first deep neural network with more than one hidden layers. Fix some bugs in neural network 1.
+
+9.2 Complete all neural network (14-100-40-4,14-6*28-4 and 14-14*28-4).
+
+Use the weights and bias given to calculate the gradient of w and b, and evaluate the result with script.
+
+Collect the performance data of three neural networks, including loss and accuracy. use matplotlib to plot and show results.
+
 
 
