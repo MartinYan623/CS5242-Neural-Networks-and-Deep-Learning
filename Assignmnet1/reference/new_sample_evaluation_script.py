@@ -7,13 +7,13 @@ import zipfile
     You are expected to upload a e*******.zip file, inside you should have a folder Question_2 which contains 6 gradients.csv file.
     For verification, you can comment out the line10 to 13, and change the truth_path and ID to 'b', however, do note the grading process WILL contain these lines.
 """
-ID = 'e012345678'
-zip_ref = zipfile.ZipFile(ID+'.zip', 'r')
-zip_ref.extractall('.')
-zip_ref.close()
+ID = 'e0210398'
+#zip_ref = zipfile.ZipFile(ID+'.zip', 'r')
+#zip_ref.extractall('.')
+#zip_ref.close()
 
-truth_path = 'the_truth_path' #change truth_path = 'b' for verification
-file_name = ['Question_2/dw-100-40-4.csv', 'Question_2/db-100-40-4.csv', 'Question_2/dw-28-6-4.csv', 'Question_2/db-28-6-4.csv', 'Question_2/dw-14-28-4.csv', 'Question_2/db-14-28-4.csv']
+truth_path = '../' #change truth_path = 'b' for verification
+file_name = ['../Question_2/dw-100-40-4.csv', '../Question_2/db-100-40-4.csv', '../Question_2/dw-28_6-4.csv', '../Question_2/db-28_6-4.csv', '../Question_2/dw-14_28-4.csv', '../Question_2/db-14_28-4.csv']
 true_file = ['true-dw-100-40-4.csv', 'true-db-100-40-4.csv', 'true-dw-28-6-4.csv', 'true-db-28-6-4.csv', 'true-dw-14-28-4.csv', 'true-db-14-28-4.csv']
 threshold = 0.05
 
@@ -57,7 +57,7 @@ for f in true_file:
 
 score = list()
 for i, fn in enumerate(file_name):
-    grads = read_file(os.path.join(ID,fn))
+    grads = read_file(os.path.join(fn))
     s = compare(grads, true_grads[i], threshold)
     score += s
 print(np.sum(score))

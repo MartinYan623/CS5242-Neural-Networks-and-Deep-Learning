@@ -2,6 +2,7 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def read_data():
     x_train = []
     y_train= []
@@ -50,6 +51,33 @@ def read_data():
     y_test = np.transpose(y_test)
 
     return x_train, y_train, x_test, y_test
+
+# csv file reading
+def read_file_within_limit(name,lower,upper):
+    l = list();
+    with open(name) as f:
+        reader = csv.reader(f)
+        i = 0
+        for row in reader:
+            if ((i >= lower) and (i < upper)):
+                row.pop(0)
+                l.append(row)
+            i = i + 1
+    return l
+
+# csv file reading
+def read_file(name):
+    l =list();
+    with open(name,'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            l.append(row)
+    return l
+
+# csv file writing
+def write_array_to_file(name, arr):
+    with open(name, 'ab') as f:
+        np.savetxt(f, arr, delimiter=",")
 
 def initialize_parameters_deep(layer_dims):
     parameters = {}
@@ -263,9 +291,6 @@ def L_layer_model(network_name,X, Y,x,y,layers_dims, learning_rate=0.01, num_ite
     plt.show()
 
     return parameters
-
-
-
 
 def predict(X, Y, parameters):
     m = X.shape[1]
