@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8c14c62-423e-4e49-a4a0-22e42ae31841" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/code/checkgradient.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2b/b-100-40-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2b/b-14_28-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2b/b-28_6-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2b/w-100-40-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2b/w-14_28-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2b/w-28_6-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2c/b-100-40-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2c/b-14-28-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2c/b-28-6-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2c/w-100-40-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2c/w-14-28-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/data/question_2_2c/w-28-6-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/reference/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/reference/verification_nn.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/true-db-100-40-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/true-db-14-28-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/true-db-28-6-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/true-dw-100-40-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/true-dw-14-28-4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignmnet1/true-dw-28-6-4.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Assignmnet1/code/datapreprocess.py" afterPath="$PROJECT_DIR$/Assignmnet1/code/neuralnetwoeklayers.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Assignmnet1/code/new_sample_evaluation_script.py" afterPath="$PROJECT_DIR$/Assignmnet1/reference/new_sample_evaluation_script.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignmnet1/code/neuralnetwork.py" afterPath="$PROJECT_DIR$/Assignmnet1/code/neuralnetwork.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Assignmnet1/code/neuralnetwoeklayers.py" afterPath="$PROJECT_DIR$/Assignmnet1/code/neuralnetworklayers.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Assignmnet1/code/neuralnetwork.py" afterPath="$PROJECT_DIR$/Assignmnet1/code/trainneuralnetwork.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,14 +14,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="neuralnetwoeklayers.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assignmnet1/code/neuralnetwoeklayers.py">
+      <file leaf-file-name="checkgradient.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assignmnet1/code/checkgradient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4365">
-              <caret line="291" column="0" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,8 +59,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="74" />
-    <option name="y" value="31" />
+    <option name="x" value="41" />
+    <option name="y" value="30" />
     <option name="width" value="1431" />
     <option name="height" value="777" />
   </component>
@@ -152,7 +126,7 @@
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="462c0819:PsiDirectoryNode" />
               <item name="Assignmnet1" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
+              <item name="Question_2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,7 +198,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS5242-Neural-Networks-and-Deep-Learning" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignmnet1/code/neuralnetwoeklayers.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignmnet1/code/neuralnetworklayers.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -258,7 +232,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS5242-Neural-Networks-and-Deep-Learning" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignmnet1/code/neuralnetwork.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignmnet1/code/trainneuralnetwork.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -314,10 +288,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="31" width="1431" height="777" extended-state="0" />
-    <editor active="true" />
+    <frame x="41" y="30" width="1431" height="777" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26061916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26421887" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844576" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -480,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_2_2b/b-14_28-4.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignmnet1/Question_2/db-100-40-4.csv" />
     <entry file="file://$PROJECT_DIR$/Assignmnet1/Question_2/db-28_6-4.csv" />
     <entry file="file://$PROJECT_DIR$/Assignmnet1/true-dw-28-6-4.csv">
@@ -566,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_2_2c/b-14-28-4.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignmnet1/Question_2/db-14_28-4.csv" />
     <entry file="file://$PROJECT_DIR$/Assignmnet1/true-db-14-28-4.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -586,7 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -594,7 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,7 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="375" column="42" lean-forward="false" selection-start-line="375" selection-start-column="42" selection-end-line="375" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -610,7 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -618,7 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -626,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -634,7 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="56" column="68" lean-forward="false" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -650,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -658,19 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/checkgradient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,11 +615,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_2_2b/b-14_28-4.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/neuralnetwork.py">
+    <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_2_2c/b-14-28-4.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/neuralnetworklayers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="291" column="0" lean-forward="false" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/trainneuralnetwork.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="24" />
@@ -690,13 +652,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/neuralnetwoeklayers.py">
+    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/checkgradient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4365">
-          <caret line="291" column="0" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
