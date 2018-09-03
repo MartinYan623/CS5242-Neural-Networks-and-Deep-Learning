@@ -5,11 +5,17 @@ Warm up task is not graded, for another three assignment, and each one is 8% of 
 The structure of code:
 CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                    |---------util.py
-                                        --- Assignment1|-----code
+                                        --- Assignment1|-----code|----checkgradient.py
+                                                                 |----neuralnet_layers.py
+                                                                 |----neuralnet_model.py
+                                                                 |----question1.py
+                                                                 |----train_neuralnet.py
+
                                                        |-----data|----question_1
                                                                  |----question_2_1
                                                                  |----question_2_2_b
                                                                  |----question_2_2_c
+
                                                        |-----Question_1
                                                        |-----Question_2
                                                        |-----reference
@@ -35,5 +41,7 @@ Use the weights and bias given to calculate the gradient of w and b, and evaluat
 
 Collect the performance data of three neural networks, including loss and accuracy. use matplotlib to plot and show results.
 
+9.3 Modify the code, run code many times and collect experimental results.
 
+Complete the report of assignment 1.
 

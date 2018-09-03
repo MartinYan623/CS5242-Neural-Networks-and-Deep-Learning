@@ -17,7 +17,7 @@ def L_layer_model(network_name, X, Y, x, y, layers_dims, learning_rate=0.01, num
     if optimizer == "momentum":
         v = initialize_v(parameters)
 
-    for i in range(0, num_iterations):
+    for i in range(0, num_iterations+1):
         # use full batch learing
         # Forward propagation
         AL, caches = L_model_forward(X, parameters)
@@ -55,22 +55,26 @@ def L_layer_model(network_name, X, Y, x, y, layers_dims, learning_rate=0.01, num
             iterations.append(i)
 
     # plot the train and test loss
-    plt.plot(iterations, train_costs, '-b', label='train data')
-    plt.plot(iterations, test_costs, '-r', label='test data')
+    plt.plot(iterations, train_costs, '-b', label='cost train data')
+    plt.plot(iterations, test_costs, '-r', label='cost test data')
     plt.legend(loc='upper right')
     plt.ylabel('Loss')
     plt.xlabel('Iterations')
+    plt.grid(True)
     plt.title("Loss for " + network_name + ",Learning rate = " + str(learning_rate))
-    plt.show()
-
-    # plot the train and test accuracy
-    plt.plot(iterations, train_accuracies, '-b', label='train data')
-    plt.plot(iterations, np.squeeze(test_accuracies), '-r', label='test data')
+    plt.savefig('/Users/martin_yan/Desktop/loss%s.png'%network_name,dpi=300)
+    #plt.show()
+    plt.figure()
+    # plot the train and tes"t accuracy
+    plt.plot(iterations, train_accuracies, '-b', label='acc. train data')
+    plt.plot(iterations, test_accuracies, '-r', label='acc. test data')
     plt.legend(loc='lower right')
     plt.ylabel('Accuracy')
     plt.xlabel('Iterations')
+    plt.grid(True)
     plt.title("Accuracy for" + network_name + ",Learning rate = " + str(learning_rate))
-    plt.show()
+    plt.savefig('/Users/martin_yan/Desktop/acc%s.png' % network_name, dpi=300)
+    #plt.show()
 
     return parameters
 
