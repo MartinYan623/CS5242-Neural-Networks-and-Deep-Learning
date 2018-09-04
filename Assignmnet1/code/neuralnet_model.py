@@ -5,7 +5,6 @@ from neuralnet_layers import *
 
 def L_layer_model(network_name, X, Y, x, y, layers_dims, learning_rate=0.01, num_iterations=3000, print_cost=False,
                   beta=0.95, optimizer=None):
-    seed = 0
     # keep track of cost
     train_costs = []
     train_accuracies = []

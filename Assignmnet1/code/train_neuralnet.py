@@ -33,6 +33,6 @@ def network_3():
     pred_test = predict(x_test, y_test, parameters)
 
 
-#network_1()
+network_1()
 network_2()
-#network_3()
+network_3()
