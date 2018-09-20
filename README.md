@@ -10,12 +10,10 @@ CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                                  |----neuralnet_model.py
                                                                  |----question1.py
                                                                  |----train_neuralnet.py
-
                                                        |-----data|----question_1
                                                                  |----question_2_1
                                                                  |----question_2_2_b
                                                                  |----question_2_2_c
-
                                                        |-----Question_1
                                                        |-----Question_2
                                                        |-----reference
