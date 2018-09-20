@@ -19,7 +19,16 @@ CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                        |-----Question_1
                                                        |-----Question_2
                                                        |-----reference
-                                        --- Assignment2|
+                                        --- Assignment2|-----part1|------data
+                                                                  |------source|------problem1.py
+                                                                               |------warmup.py
+                                                                               |------assign2_utils.py
+                                                                               |------A0174365Y.pkl
+                                                       |-----part2|------data
+                                                                  |------source|------assign2_utils_p2.py
+                                                                               |------cifar10.py
+                                                                               |------example_network.py
+                                                                               |------problem2_task1.py
                                         --- Assignment3|
 
 
@@ -45,3 +54,8 @@ Collect the performance data of three neural networks, including loss and accura
 
 Complete the report of assignment 1.
 
+9.19 Complete problem1 of the assignment2.
+
+9.20 Complete problem2 task1.
+
+For mnist data set, got accuracy 93.29%. For cifar10 data set, got accuracy 43.19%. This is the baseline for model.
