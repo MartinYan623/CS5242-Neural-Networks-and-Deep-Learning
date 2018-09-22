@@ -57,3 +57,8 @@ Complete the report of assignment 1.
 9.20 Complete problem2 task1.
 
 For mnist data set, got accuracy 93.29%. For cifar10 data set, got accuracy 43.19%. This is the baseline for model.
+
+9.22 Complete problem2 task2.
+
+Improved accuracy for mnist data is 98.2%. for cifar10 data set, improved accuracy is 53%.
+

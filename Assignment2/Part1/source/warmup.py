@@ -32,7 +32,7 @@ plt.imshow(image_f)
 # read documentation on Keras' optimizers
 sgd = optimizers.SGD(lr=0.001, momentum=0.99, decay=0.0001, nesterov=False)
 # read documentation on how a Keras model is compiled
-model.compile(loss='mean_squared_error', optimizer='sgd')
+model.compile(loss='mean_squared_error', optimizer=sgd)
 # expand dimension of input data to make it of shape BxHxWx1,
 # B is the batchsize, in our case it's 1.
 x = np.expand_dims(np.expand_dims(image, 0), 3)

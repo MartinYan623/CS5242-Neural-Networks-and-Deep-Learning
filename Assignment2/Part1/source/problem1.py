@@ -50,9 +50,11 @@ model2 = Model(inputs=a, outputs=c)
 
 # read documentation on Keras' optimizers
 sgd = optimizers.SGD(lr=0.001, momentum=0.99, decay=0.0001, nesterov=False)
+rmsprop = optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0001)
+adam= optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0001, amsgrad=False)
 # read documentation on how a Keras model is compiled
-model1.compile(loss='mean_squared_error', optimizer='sgd')
-model2.compile(loss='mean_squared_error', optimizer='sgd')
+model1.compile(loss='mean_squared_error', optimizer=sgd)
+model2.compile(loss='mean_squared_error', optimizer=sgd)
 # expand dimension of input data to make it of shape BxHxWx1,
 # B is the batchsize, in our case it's 1.
 x_1 = np.expand_dims(np.expand_dims(image_1, 0), 3)
