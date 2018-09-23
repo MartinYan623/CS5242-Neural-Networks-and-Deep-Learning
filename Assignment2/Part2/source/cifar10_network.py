@@ -19,7 +19,7 @@ def cifar10_network(input_shape=(32, 32, 3), class_num=10):
         t = Conv2D(filters=64, kernel_size=(3, 3), strides=(1,1), padding='valid', data_format='channels_last')(t)
         #t= normalization.BatchNormalization(epsilon=1e-06, mode=0, axis=-1, momentum=0.9, weights=None, beta_init='zero', gamma_init='one')(t)
         t = Activation('relu')(t)
-        t = Dropout(rate=0.5, seed=True)(t)
+        t = Dropout(rate=0.4, seed=True)(t)
         t = MaxPool2D(pool_size=(3,3), strides=(1,1), padding='valid', data_format='channels_last')(t)
         times = times + 1
 

@@ -18,7 +18,7 @@ def mnist_network(input_shape=(28, 28, 1), class_num=10):
         t = Conv2D(filters=32, kernel_size=(3,3), strides=(1, 1), padding='valid', data_format='channels_last',
                    kernel_initializer='random_normal',kernel_regularizer=regularizers.l2(0.01))(
             im_input)
-        t = Conv2D(filters=64, kernel_size=(3,3), strides=(1, 1), padding='valid', data_format='channels_last',
+        t = Conv2D(filters=64, kernel_size=(3,3), strides=(2, 2), padding='valid', data_format='channels_last',
                    kernel_initializer='random_normal', kernel_regularizer=regularizers.l2(0.01))(
             t)
         t = Activation('relu')(t)
@@ -27,7 +27,7 @@ def mnist_network(input_shape=(28, 28, 1), class_num=10):
         times = times + 1
 
     t = Flatten()(t)
-    t = Dense(units=512)(t)
+    t = Dense(units=256)(t)
     t = Activation(activation='relu')(t)
     t = Dense(units=class_num)(t)
     output = Activation(activation='softmax')(t)

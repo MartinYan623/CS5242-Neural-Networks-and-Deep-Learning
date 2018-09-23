@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8c14c62-423e-4e49-a4a0-22e42ae31841" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assignment2/Part2/source/cifar10.h5" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/Part1/source/A0174365Y.pkl" afterPath="$PROJECT_DIR$/Assignment2/Part1/source/A0174365Y.pkl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/Part1/source/problem1.py" afterPath="$PROJECT_DIR$/Assignment2/Part1/source/problem1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/Part1/source/warmup.py" afterPath="$PROJECT_DIR$/Assignment2/Part1/source/warmup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/Part2/source/cifar10_network.py" afterPath="$PROJECT_DIR$/Assignment2/Part2/source/cifar10_network.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py" afterPath="$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py" afterPath="$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,12 +17,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="problem2_task2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="409">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mnist_network.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,21 +78,21 @@
         <option value="$PROJECT_DIR$/Assignment2/Part1/source/assign2_utils.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/p2_task1.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/assign2_utils_p2.py" />
-        <option value="$PROJECT_DIR$/Assignment2/Part2/source/cifar10.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/example_network.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/problem2_task1.py" />
-        <option value="$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py" />
-        <option value="$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py" />
-        <option value="$PROJECT_DIR$/Assignment2/Part2/source/cifar10_network.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part1/source/warmup.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part1/source/problem1.py" />
+        <option value="$PROJECT_DIR$/Assignment2/Part2/source/cifar10_network.py" />
+        <option value="$PROJECT_DIR$/Assignment2/Part2/source/cifar10.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py" />
+        <option value="$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="9" />
-    <option name="y" value="31" />
+    <option name="y" value="23" />
     <option name="width" value="1431" />
     <option name="height" value="777" />
   </component>
@@ -135,28 +146,28 @@
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="462c0819:PsiDirectoryNode" />
               <item name="Assignment2" type="462c0819:PsiDirectoryNode" />
-              <item name="Part1" type="462c0819:PsiDirectoryNode" />
+              <item name="Part2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="462c0819:PsiDirectoryNode" />
               <item name="Assignment2" type="462c0819:PsiDirectoryNode" />
-              <item name="Part1" type="462c0819:PsiDirectoryNode" />
+              <item name="Part2" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS5242-Neural-Networks-and-Deep-Learning" type="462c0819:PsiDirectoryNode" />
               <item name="Assignment2" type="462c0819:PsiDirectoryNode" />
-              <item name="Part1" type="462c0819:PsiDirectoryNode" />
+              <item name="Part2" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,11 +183,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Assignment2/Part2/source" />
       <recent name="$PROJECT_DIR$/Assignment2/Part2/data" />
       <recent name="$PROJECT_DIR$/Assignment2/Part2/data/cifar10" />
       <recent name="$PROJECT_DIR$/Assignment2/Part2" />
       <recent name="$PROJECT_DIR$/Assignment2/Part1/data" />
-      <recent name="$PROJECT_DIR$/Assignment2/Part2/source" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -191,7 +202,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.problem1">
+  <component name="RunManager" selected="Python.problem2_task2">
     <configuration name="neuralnet_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -267,12 +278,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment2/Part1/source" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment2/Part2/source" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS5242-Neural-Networks-and-Deep-Learning" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2/Part1/source/problem1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -286,9 +297,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.problem1" />
-        <item index="1" class="java.lang.String" itemvalue="Python.problem2_task2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.problem2_task1" />
+        <item index="0" class="java.lang.String" itemvalue="Python.problem2_task2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.problem2_task1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.problem1" />
         <item index="3" class="java.lang.String" itemvalue="Python.p1" />
         <item index="4" class="java.lang.String" itemvalue="Python.neuralnet_model" />
       </list>
@@ -311,13 +322,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="31" width="1431" height="777" extended-state="0" />
+    <frame x="9" y="23" width="1431" height="777" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2739343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32765958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32765958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -362,27 +373,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/zipfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="1089" column="0" lean-forward="false" selection-start-line="1089" selection-start-column="0" selection-end-line="1089" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_2_2c/w-100-40-4.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_2_2c/w-28-6-4.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_2_2c/w-14-28-4.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -567,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/assign2_utils_p2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/cifar10.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -609,56 +592,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/A0174365Y.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/my_model.h5" />
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/problem2_task1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="18" column="94" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/example_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/cifar10.h5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/cifar10_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="27" column="62" lean-forward="false" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/cifar10.h5" />
     <entry file="file://$PROJECT_DIR$/Assignment2/Part1/source/validation.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -689,14 +624,86 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
           <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/A0174365Y.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/assign2_utils_p2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/cifar10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/problem2_task1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="332">
+          <caret line="64" column="39" lean-forward="true" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/cifar10_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/A0174365Y_cifar10.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/A0174365Y_mnist.h5">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/example_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
