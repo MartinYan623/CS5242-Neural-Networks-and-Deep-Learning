@@ -10,7 +10,7 @@ from numpy.random import seed
 seed(10)
 
 # Create model
-def create_fc_model(length):
+def create_fc_model():
     model = Sequential([
         Dense(20, input_dim=length),
         Activation('relu'),
@@ -116,7 +116,7 @@ for num_input in range(min_length, max_length+1):
 
     # Create the model
     print('Creating Fully-Connected Model...')
-    model_fc = create_fc_model(length)
+    model_fc = create_fc_model()
 
     rmsprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.00005)
     model_fc.compile(optimizer=rmsprop, loss='mean_squared_error')
@@ -154,7 +154,7 @@ for num_input in range(min_length, max_length+1):
     print('Predicting')
     ##### PREDICT #####
     predicted_fc = model_fc.predict(x_test, batch_size=batch_size)
-
+    print(predicted_fc)
     ##### CALCULATE RMSE #####
     fc_rmse = np.sqrt(mean_squared_error(y_test, predicted_fc))
     fc_rmse_list.append(fc_rmse)
