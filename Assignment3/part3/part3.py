@@ -2,21 +2,20 @@ from __future__ import print_function
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from keras.optimizers import RMSprop
 from keras.models import Sequential
-from keras.layers import Dense, LSTM, SimpleRNN, Activation,Embedding
+from keras.layers import Dense, LSTM, SimpleRNN
 from sklearn.metrics import mean_squared_error
-
+from keras.optimizers import RMSprop
 
 # Create model
-def create_rnn_model(stateful):
+def create_lstm_model(stateful):
     ##### YOUR MODEL GOES HERE #####
     model = Sequential()
-    model.add(SimpleRNN(20, stateful=stateful, return_sequences=False, batch_input_shape=(1,length,1), activation='relu'))
+    model.add(
+        LSTM(20, stateful=stateful, return_sequences=False, batch_input_shape=(1, length, 1)))
     model.add(Dense(1))
 
     return model
-
 
 # split train/test data
 def split_data(x, y, ratio=0.8):
@@ -38,12 +37,12 @@ def split_data(x, y, ratio=0.8):
     # some reshaping
     ##### RESHAPE YOUR DATA BASED ON YOUR MODEL #####
     x_train = x_train.values
-    x_train = x_train.reshape(to_train,length,1)
+    x_train = x_train.reshape(to_train, length, 1)
     y_train = y_train.values
     y_train = y_train.reshape(to_train, 1)
 
     x_test = x_test.values
-    x_test = x_test.reshape(len(x.index) - to_train,length,1)
+    x_test = x_test.reshape(len(x.index) - to_train, length, 1)
     y_test = y_test.values
     y_test = y_test.reshape(len(x.index) - to_train, 1)
 
@@ -67,11 +66,12 @@ print('smooth_data shape:{}'.format(smooth_data.shape))
 print('noisy_data first 5 data points:{}'.format(noisy_data[:5]))
 print('smooth_data first 5 data points:{}'.format(smooth_data[:5]))
 
-# List to keep track of root mean square error for different length input sequences
-rnn_stateful_rmse_list = list()
-rnn_stateless_rmse_list = list()
 
-for num_input in range(min_length, max_length + 1):
+# List to keep track of root mean square error for different length input sequences
+lstm_stateful_rmse_list = list()
+lstm_stateless_rmse_list = list()
+
+for num_input in range(min_length,max_length+1):
     length = num_input
 
     print("*" * 33)
@@ -81,6 +81,7 @@ for num_input in range(min_length, max_length + 1):
     # convert numpy arrays to pandas dataframe
     data_input = pd.DataFrame(noisy_data)
     expected_output = pd.DataFrame(smooth_data)
+
     empty = pd.DataFrame(data=None, columns=range(0, length))
     # when length > 1, arrange input sequences
     if length > 1:
@@ -95,7 +96,9 @@ for num_input in range(min_length, max_length + 1):
         for i in range(length - 1):
             expected_output = expected_output.drop(i)
 
-    print('data_input length:{}'.format(len(data_input.index)))
+
+    print('data_input length:{}'.format(len(data_input.index)) )
+
     # Split training and test data: use first 80% of data points as training and remaining as test
     (x_train, y_train), (x_test, y_test) = split_data(data_input, expected_output)
     print('x_train.shape: ', x_train.shape)
@@ -115,11 +118,11 @@ for num_input in range(min_length, max_length + 1):
     print(expected_output.tail())
 
     # Create the stateful model
-    print('Creating Stateful Vanilla RNN Model...')
-    model_rnn_stateful = create_rnn_model(stateful=True)
+    print('Creating Stateful LSTM Model...')
+    model_lstm_stateful = create_lstm_model(stateful=True)
 
-    rmsprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.00005)
-    model_rnn_stateful.compile(optimizer=rmsprop, loss='mean_squared_error')
+    rmsprop = RMSprop(lr=0.0001, rho=0.9, epsilon=1e-08, decay=0.00005)
+    model_lstm_stateful.compile(optimizer=rmsprop, loss='mean_squared_error')
 
     # Train the model
     print('Training')
@@ -131,11 +134,12 @@ for num_input in range(min_length, max_length + 1):
         # be used as initial state for sample i in the next batch.
 
         ##### TRAIN YOUR MODEL #####
-        history = model_rnn_stateful.fit(x_train, y_train, epochs=1, batch_size=batch_size, validation_data=(x_test, y_test), shuffle=False)
+        history = model_lstm_stateful.fit(x_train, y_train, epochs=1, batch_size=batch_size, validation_data=(x_test, y_test), shuffle=False)
         train_loss.append(history.history['loss'])
         test_loss.append(history.history['val_loss'])
         # reset states at the end of each epoch
-        model_rnn_stateful.reset_states()
+        model_lstm_stateful.reset_states()
+
 
     # Plot and save loss curves of training and test set vs iteration in the same graph
     ##### PLOT AND SAVE LOSS CURVES #####
@@ -143,7 +147,7 @@ for num_input in range(min_length, max_length + 1):
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs + 1), train_loss, label='train_loss')
     plt.plot(np.arange(1, epochs + 1), test_loss, label='test_loss')
-    plt.title('Loss vs Iterations in Training and Testing Set for Stateful RNN  Length:' + str(num_input))
+    plt.title('Loss vs Iterations in Training and Testing Set for Stateful LSTM  Length:' + str(num_input))
     plt.xlabel('Iterations')
     plt.ylabel('Loss')
     x_label = range(1, 11)
@@ -154,37 +158,37 @@ for num_input in range(min_length, max_length + 1):
 
     # Save your model weights with following convention:
     # For example length 1 input sequences model filename
-    # rnn_stateful_model_weights_length_1.h5
+    # lstm_stateful_model_weights_length_1.h5
     ##### SAVE MODEL WEIGHTS #####
-    filename = 'rnn_stateful_model_weights_length_%d.h5' % num_input
-    model_rnn_stateful.save_weights(filename)
+    filename = 'lstm_stateful_model_weights_length_%d.h5'%num_input
+    model_lstm_stateful.save_weights(filename)
 
     # Predict
     print('Predicting')
     ##### PREDICT #####
-    predicted_rnn_stateful = model_rnn_stateful.predict(x_test, batch_size=batch_size)
-    #predicted_rnn_stateful= predicted_rnn_stateful.reshape(len(data_input.index) - int(len(data_input.index) * 0.8), 1)
+    predicted_lstm_stateful = model_lstm_stateful.predict(x_test, batch_size=batch_size)
 
     ##### CALCULATE RMSE #####
-    rnn_stateful_rmse = np.sqrt(mean_squared_error(y_test, predicted_rnn_stateful))
-    rnn_stateful_rmse_list.append(rnn_stateful_rmse)
+    lstm_stateful_rmse = np.sqrt(mean_squared_error(y_test, predicted_lstm_stateful))
+    lstm_stateful_rmse_list.append(lstm_stateful_rmse)
 
     # print('tsteps:{}'.format(tsteps))
     print('length:{}'.format(length))
-    print('Stateful Vanilla RNN RMSE:{}'.format(rnn_stateful_rmse))
+    print('Stateful LSTM RMSE:{}'.format( lstm_stateful_rmse ))
 
     # Create the stateless model
-    print('Creating stateless Vanilla RNN Model...')
-    model_rnn_stateless = create_rnn_model(stateful=False)
-    model_rnn_stateless.compile(optimizer=rmsprop, loss='mean_squared_error')
+    print('Creating stateless LSTM Model...')
+    model_lstm_stateless = create_lstm_model(stateful=False)
+    model_lstm_stateless.compile(optimizer=rmsprop, loss='mean_squared_error')
 
     # Train the model
     print('Training')
     ##### TRAIN YOUR MODEL #####
-    history = model_rnn_stateless.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(x_test, y_test), shuffle=False)
+    history = model_lstm_stateless.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(x_test, y_test), shuffle=False)
 
     # Plot and save loss curves of training and test set vs iteration in the same graph
     ##### PLOT AND SAVE LOSS CURVES #####
+
     train_loss = history.history['loss']
     test_loss = history.history['val_loss']
     # loss = np.sqrt(loss)
@@ -192,7 +196,7 @@ for num_input in range(min_length, max_length + 1):
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs + 1), train_loss, label='train_loss')
     plt.plot(np.arange(1, epochs + 1), test_loss, label='test_loss')
-    plt.title('Loss vs Iterations in Training and Testing Set for Stateless RNN  Length:' + str(num_input))
+    plt.title('Loss vs Iterations in Training and Testing Set for Stateless LSTM  Length:' + str(num_input))
     plt.xlabel('Iterations')
     plt.ylabel('Loss')
     x_label = range(1, 11)
@@ -201,42 +205,49 @@ for num_input in range(min_length, max_length + 1):
     plt.grid()
     plt.show()
 
-# Save your model weights with following convention:
+    # Save your model weights with following convention:
     # For example length 1 input sequences model filename
-    # rnn_stateless_model_weights_length_1.h5
+    # lstm_stateless_model_weights_length_1.h5
     ##### SAVE MODEL WEIGHTS #####
-    filename = 'rnn_stateless_model_weights_length_%d.h5' % num_input
-    model_rnn_stateless.save_weights(filename)
+    filename = 'lstm_stateless_model_weights_length_%d.h5'%num_input
+    model_lstm_stateless.save_weights(filename)
 
     # Predict
     print('Predicting')
     ##### PREDICT #####
-    predicted_rnn_stateless = model_rnn_stateless.predict(x_test, batch_size=batch_size)
-    #predicted_rnn_stateless = predicted_rnn_stateless.reshape(len(data_input.index) - int(len(data_input.index) * 0.8), 1)
+    predicted_lstm_stateless = model_lstm_stateless.predict(x_test, batch_size=batch_size)
+
     ##### CALCULATE RMSE #####
-    rnn_stateless_rmse = np.sqrt(mean_squared_error(y_test, predicted_rnn_stateless))
-    rnn_stateless_rmse_list.append(rnn_stateless_rmse)
+    lstm_stateless_rmse = np.sqrt(mean_squared_error(y_test, predicted_lstm_stateless))
+    lstm_stateless_rmse_list.append(lstm_stateless_rmse)
 
     # print('tsteps:{}'.format(tsteps))
     print('length:{}'.format(length))
-    print('Stateless Vanilla RNN RMSE:{}'.format(rnn_stateless_rmse))
+    print('Stateless LSTM RMSE:{}'.format( lstm_stateless_rmse ))
+
 
 # save your rmse values for different length input sequence models - stateful rnn:
-filename = 'rnn_stateful_model_rmse_values.txt'
-np.savetxt(filename, np.array(rnn_stateful_rmse_list), fmt='%.6f', delimiter='\t')
+filename = 'lstm_stateful_model_rmse_values.txt'
+np.savetxt(filename, np.array(lstm_stateful_rmse_list), fmt='%.6f', delimiter='\t')
 
 # save your rmse values for different length input sequence models - stateless rnn:
-filename = 'rnn_stateless_model_rmse_values.txt'
-np.savetxt(filename, np.array(rnn_stateless_rmse_list), fmt='%.6f', delimiter='\t')
+filename = 'lstm_stateless_model_rmse_values.txt'
+np.savetxt(filename, np.array(lstm_stateless_rmse_list), fmt='%.6f', delimiter='\t')
 
 print("#" * 33)
 print('Plotting Results')
 print("#" * 33)
 
+plt.figure()
+plt.plot(data_input[0][:100], '.')
+plt.plot(expected_output[0][:100], '-')
+plt.legend(['Input', 'Expected output'])
+plt.title('Input - First 100 data points')
+
 # Plot and save rmse vs Input Length
 plt.figure()
-plt.plot(np.arange(min_length, max_length + 1), rnn_stateful_rmse_list, c='blue', label='Stateful RNN')
-plt.plot(np.arange(min_length, max_length + 1), rnn_stateless_rmse_list, c='cyan', label='Stateless RNN')
+plt.plot( np.arange(min_length,max_length+1), lstm_stateful_rmse_list, c='red', label='Stateful LSTM')
+plt.plot( np.arange(min_length,max_length+1), lstm_stateless_rmse_list, c='magenta', label='Stateless LSTM')
 plt.title('RMSE vs Input Length in Test Set')
 plt.xlabel('Length of Input Sequences')
 plt.ylabel('RMSE')
@@ -245,3 +256,5 @@ plt.xticks(x_label)
 plt.legend()
 plt.grid()
 plt.show()
+
+

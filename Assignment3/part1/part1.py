@@ -123,7 +123,7 @@ for num_input in range(min_length, max_length+1):
     # Train the model
     print('Training')
     ##### TRAIN YOUR MODEL #####
-    history = model_fc.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.2, shuffle=False)
+    history = model_fc.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(x_test, y_test), shuffle=False)
 
     # Plot and save loss curves of training and test set vs iteration in the same graph
     ##### PLOT AND SAVE LOSS CURVES #####
@@ -154,7 +154,6 @@ for num_input in range(min_length, max_length+1):
     print('Predicting')
     ##### PREDICT #####
     predicted_fc = model_fc.predict(x_test, batch_size=batch_size)
-    print(predicted_fc)
     ##### CALCULATE RMSE #####
     fc_rmse = np.sqrt(mean_squared_error(y_test, predicted_fc))
     fc_rmse_list.append(fc_rmse)
