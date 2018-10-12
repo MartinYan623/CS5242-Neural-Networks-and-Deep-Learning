@@ -27,8 +27,11 @@ CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                                                |------cifar10.py
                                                                                |------example_network.py
                                                                                |------problem2_task1.py
-                                        --- Assignment3|
-
+                                        --- Assignment3|-----filter_data
+                                                       |-----part1|-------part1.py
+                                                       |-----part2|-------part2.py
+                                                       |-----part3|-------part3.py
+                                                       |-----part4|-------part4.py
 
 There are some logs about my assignments as follows:
 
@@ -64,3 +67,6 @@ Improved accuracy for mnist data is 98.2%. for cifar10 data set, improved accura
 
 9.23 Write the report for both problem.
 
+10.11 complete assignment 3 part 1
+
+10.12 complete assignment 3 part234

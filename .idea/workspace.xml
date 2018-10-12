@@ -2,11 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8c14c62-423e-4e49-a4a0-22e42ae31841" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/part3/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/part3/part3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/part4/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/part4/part4.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_10_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_1_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_2_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_3_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_4_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_5_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_6_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_7_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_8_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_9_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_10_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_1_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_2_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_3_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_4_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_5_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_6_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_7_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_8_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateful_model_weights_length_9_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_10_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_1_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_2_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_3_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_4_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_5_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_6_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_7_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_8_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/lstm_stateless_model_weights_length_9_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_10_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_1_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_2_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_3_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_4_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_5_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_6_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_7_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_8_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateful_model_weights_length_9_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_10_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_1_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_2_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_3_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_4_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_5_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_6_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_7_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_8_trained.h5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assignment3/trained_models/rnn_stateless_model_weights_length_9_trained.h5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment3/part1/part1.py" afterPath="$PROJECT_DIR$/Assignment3/part1/part1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment3/part2/part2.py" afterPath="$PROJECT_DIR$/Assignment3/part2/part2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +65,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,19 +111,19 @@
         <option value="$PROJECT_DIR$/Assignment2/Part1/source/problem1.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/cifar10_network.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/cifar10.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/mnist_network.py" />
         <option value="$PROJECT_DIR$/Assignment2/Part2/source/problem2_task2.py" />
         <option value="$PROJECT_DIR$/Assignment3/part1/aa.py" />
         <option value="$PROJECT_DIR$/Assignment3/part2/part2.py" />
         <option value="$PROJECT_DIR$/Assignment3/part3/part3.py" />
         <option value="$PROJECT_DIR$/Assignment3/part1/part1.py" />
+        <option value="$PROJECT_DIR$/Assignment3/part4/part4.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
-    <option name="y" value="26" />
+    <option name="y" value="23" />
     <option name="width" value="1431" />
     <option name="height" value="777" />
   </component>
@@ -115,7 +164,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,7 +181,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -148,11 +197,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Assignment3/trained_models" />
+      <recent name="$PROJECT_DIR$/Assignment3/part4" />
       <recent name="$PROJECT_DIR$/Assignment3/part3" />
       <recent name="$PROJECT_DIR$/Assignment3/part2" />
       <recent name="$PROJECT_DIR$/Assignment3/part1" />
-      <recent name="$PROJECT_DIR$/Assignment3/filter_data" />
-      <recent name="$PROJECT_DIR$/Assignment3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -167,25 +216,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.part1">
+  <component name="RunManager" selected="Python.part4">
     <configuration name="aa" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment3/part1" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CS5242-Neural-Networks-and-Deep-Learning" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment3/part1/part1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="p1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -253,20 +285,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="part4" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment3/part4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CS5242-Neural-Networks-and-Deep-Learning" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment3/part4/part4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.p1" />
-      <item index="1" class="java.lang.String" itemvalue="Python.part1" />
-      <item index="2" class="java.lang.String" itemvalue="Python.aa" />
-      <item index="3" class="java.lang.String" itemvalue="Python.part2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.part3" />
+      <item index="0" class="java.lang.String" itemvalue="Python.part1" />
+      <item index="1" class="java.lang.String" itemvalue="Python.aa" />
+      <item index="2" class="java.lang.String" itemvalue="Python.part2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.part3" />
+      <item index="4" class="java.lang.String" itemvalue="Python.part4" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.part1" />
-        <item index="1" class="java.lang.String" itemvalue="Python.part2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.part3" />
-        <item index="3" class="java.lang.String" itemvalue="Python.aa" />
-        <item index="4" class="java.lang.String" itemvalue="Python.p1" />
+        <item index="0" class="java.lang.String" itemvalue="Python.part4" />
+        <item index="1" class="java.lang.String" itemvalue="Python.part1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.part2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.part3" />
+        <item index="4" class="java.lang.String" itemvalue="Python.aa" />
       </list>
     </recent_temporary>
   </component>
@@ -287,7 +336,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="26" width="1431" height="777" extended-state="0" />
+    <frame x="0" y="23" width="1431" height="777" extended-state="0" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2739343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -341,62 +390,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/reference/net1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="356" column="31" lean-forward="false" selection-start-line="356" selection-start-column="7" selection-end-line="356" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/reference/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4024">
-          <caret line="326" column="22" lean-forward="false" selection-start-line="326" selection-start-column="22" selection-end-line="326" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/checkgradient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/Question_2/db-14-28-4.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/code/train_neuralnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Warm Up/data/x_train.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignmnet1/data/question_1/a/a_b.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Warm Up/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/Part1/data/example.pkl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -429,13 +422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-96">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/keras/engine/base_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -476,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="64" column="39" lean-forward="true" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/Part2/source/A0174365Y_cifar10.h5">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -516,41 +495,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/assignment_03/part4的副本/part4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/assignment_03/trained_models的副本/fc_model_weights_length_1_trained.h5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/assignment_03/trained_models的副本/fc_model_weights_length_2_trained.h5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/assignment_03/trained_models的副本/fc_model_weights_length_3_trained.h5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/assignment_03/trained_models的副本/fc_model_weights_length_4_trained.h5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment3/filter_data/smooth_data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -577,7 +521,7 @@
         <state relative-caret-position="-411">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -668,33 +612,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment3/part2/part2.py">
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_10_trained.h5">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="190" column="34" lean-forward="true" selection-start-line="190" selection-start-column="34" selection-end-line="190" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_9_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_8_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_7_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_6_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_5_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_4_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_3_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_2_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/trained_models/fc_model_weights_length_1_trained.h5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/keras/engine/base_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assignment3/part3/part3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="136" column="125" lean-forward="false" selection-start-line="136" selection-start-column="93" selection-end-line="136" selection-end-column="125" />
+        <state relative-caret-position="96">
+          <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/part2/part2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="165" column="4" lean-forward="false" selection-start-line="165" selection-start-column="4" selection-end-line="165" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="1566" column="0" lean-forward="false" selection-start-line="1566" selection-start-column="0" selection-end-line="1566" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/part1/part1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/part4/all_models_rmse_values.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment3/part4/part4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2685">
+          <caret line="179" column="23" lean-forward="true" selection-start-line="179" selection-start-column="23" selection-end-line="179" selection-end-column="23" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment3/part1/part1.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="152" column="13" lean-forward="true" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-376">
+          <caret line="30" column="82" lean-forward="true" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
