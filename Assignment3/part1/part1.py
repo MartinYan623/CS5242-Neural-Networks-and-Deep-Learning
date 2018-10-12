@@ -5,11 +5,14 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, LSTM, SimpleRNN, Activation
 from sklearn.metrics import mean_squared_error
+from keras.optimizers import RMSprop
+from numpy.random import seed
+seed(10)
 
 # Create model
 def create_fc_model(length):
     model = Sequential([
-        Dense(20, input_shape=(length,)),
+        Dense(20, input_dim=length),
         Activation('relu'),
         Dense(1)
     ])
@@ -34,6 +37,15 @@ def split_data(x, y, ratio=0.8):
 
     # some reshaping
     ##### RESHAPE YOUR DATA BASED ON YOUR MODEL #####
+    x_train = x_train.values
+    x_train=x_train.reshape(to_train,length)
+    y_train = y_train.values
+    y_train = y_train.reshape(to_train,1)
+
+    x_test = x_test.values
+    x_test = x_test.reshape(len(x.index)-to_train, length)
+    y_test = y_test.values
+    y_test = y_test.reshape(len(x.index)-to_train, 1)
 
     return (x_train, y_train), (x_test, y_test)
 
@@ -106,7 +118,8 @@ for num_input in range(min_length, max_length+1):
     print('Creating Fully-Connected Model...')
     model_fc = create_fc_model(length)
 
-    model_fc.compile(optimizer='rmsprop', loss='mean_squared_error')
+    rmsprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.00005)
+    model_fc.compile(optimizer=rmsprop, loss='mean_squared_error')
     # Train the model
     print('Training')
     ##### TRAIN YOUR MODEL #####
@@ -121,7 +134,7 @@ for num_input in range(min_length, max_length+1):
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs+1), loss, label='train_loss')
     plt.plot(np.arange(1, epochs+1), val_loss, label='val_loss')
-    plt.title('Loss vs Iterations in Training and Validation Set')
+    plt.title('Loss vs Iterations in Training and Validation Set  Length:'+str(num_input))
     plt.xlabel('Iterations')
     plt.ylabel('Loss')
     x_label = range(1,11)
@@ -140,7 +153,7 @@ for num_input in range(min_length, max_length+1):
     # Predict
     print('Predicting')
     ##### PREDICT #####
-    predicted_fc = model_fc.predict(x_test)
+    predicted_fc = model_fc.predict(x_test, batch_size=batch_size)
 
     ##### CALCULATE RMSE #####
     fc_rmse = np.sqrt(mean_squared_error(y_test, predicted_fc))
