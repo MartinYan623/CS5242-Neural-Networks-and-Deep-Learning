@@ -5,14 +5,14 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, LSTM, SimpleRNN, Activation
 from sklearn.metrics import mean_squared_error
-from keras.optimizers import RMSprop
+from keras.optimizers import RMSprop,Adam
 from numpy.random import seed
-seed(10)
+seed(1)
 
 # Create model
 def create_fc_model():
     model = Sequential([
-        Dense(20, input_dim=length),
+        Dense(20, input_dim=x_train.shape[1]),
         Activation('relu'),
         Dense(1)
     ])
@@ -38,14 +38,13 @@ def split_data(x, y, ratio=0.8):
     # some reshaping
     ##### RESHAPE YOUR DATA BASED ON YOUR MODEL #####
     x_train = x_train.values
-    x_train=x_train.reshape(to_train,length)
     y_train = y_train.values
-    y_train = y_train.reshape(to_train,1)
-
     x_test = x_test.values
-    x_test = x_test.reshape(len(x.index)-to_train, length)
     y_test = y_test.values
-    y_test = y_test.reshape(len(x.index)-to_train, 1)
+    x_train = x_train.reshape(to_train, length)
+    y_train = y_train.reshape(to_train, 1)
+    x_test = x_test.reshape(len(x.index) - to_train, length)
+    y_test = y_test.reshape(len(x.index) - to_train, 1)
 
     return (x_train, y_train), (x_test, y_test)
 
@@ -81,19 +80,20 @@ for num_input in range(min_length, max_length+1):
     expected_output = pd.DataFrame(smooth_data)
 
     # when length > 1, arrange input sequences
-    empty = pd.DataFrame(data=None, columns=range(0, length))
     if length > 1:
         # ARRANGE YOUR DATA SEQUENCES
         # lose L-1 input data
+        empty = pd.DataFrame(data=None, columns=range(0, length))
         for i in range(length-1, len(data_input)):
             list = []
             for j in range(i, i-length, -1):
                 list.append(data_input.iloc[j][0])
-            empty.loc[i-1] = list
+            empty.loc[i - length + 1] = list
         data_input = empty
         # lose L-1 output data
         for i in range(length-1):
             expected_output = expected_output.drop(i)
+            expected_output = expected_output.reset_index(drop=True)
 
     print('data_input length:{}'.format(len(data_input.index)))
     # Split training and test data: use first 80% of data points as training and remaining as test
@@ -117,30 +117,31 @@ for num_input in range(min_length, max_length+1):
     # Create the model
     print('Creating Fully-Connected Model...')
     model_fc = create_fc_model()
-
     rmsprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.00005)
     model_fc.compile(optimizer=rmsprop, loss='mean_squared_error')
     # Train the model
     print('Training')
     ##### TRAIN YOUR MODEL #####
-    history = model_fc.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(x_test, y_test), shuffle=False)
+    history = model_fc.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(x_test, y_test),
+                           shuffle=False)
 
     # Plot and save loss curves of training and test set vs iteration in the same graph
     ##### PLOT AND SAVE LOSS CURVES #####
     loss = history.history['loss']
-    val_loss = history.history['val_loss']
+    test_loss = history.history['val_loss']
     #loss = np.sqrt(loss)
     #val_loss = np.sqrt(val_loss)
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs+1), loss, label='train_loss')
-    plt.plot(np.arange(1, epochs+1), val_loss, label='val_loss')
-    plt.title('Loss vs Iterations in Training and Validation Set  Length:'+str(num_input))
-    plt.xlabel('Iterations')
-    plt.ylabel('Loss')
+    plt.plot(np.arange(1, epochs+1), test_loss, label='test_loss')
+    plt.title('Loss vs Epochs in Training and Validation Set  Length:'+str(num_input))
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss(MSE)')
     x_label = range(1,11)
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
+    plt.savefig('/Users/martin_yan/Desktop/part1_%d.jpg' % length, dpi=200)
     plt.show()
 
     # Save your model weights with following convention:
@@ -180,6 +181,7 @@ plt.xticks(x_label)
 plt.ylabel('RMSE')
 plt.legend()
 plt.grid()
+plt.savefig('/Users/martin_yan/Desktop/part1_rmse.jpg', dpi=200)
 plt.show()
 
 

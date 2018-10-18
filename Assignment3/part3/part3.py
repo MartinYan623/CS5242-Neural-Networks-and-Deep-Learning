@@ -82,19 +82,21 @@ for num_input in range(min_length,max_length+1):
     data_input = pd.DataFrame(noisy_data)
     expected_output = pd.DataFrame(smooth_data)
 
-    empty = pd.DataFrame(data=None, columns=range(0, length))
     # when length > 1, arrange input sequences
     if length > 1:
         # ARRANGE YOUR DATA SEQUENCES
         # lose L-1 input data
+        empty = pd.DataFrame(data=None, columns=range(0, length))
         for i in range(length - 1, len(data_input)):
             list = []
             for j in range(i, i - length, -1):
                 list.append(data_input.iloc[j][0])
-            empty.loc[i - 1] = list
-        data_input = empty  # lose L-1 output data
+            empty.loc[i - length + 1] = list
+        data_input = empty
+        # lose L-1 output data
         for i in range(length - 1):
             expected_output = expected_output.drop(i)
+            expected_output = expected_output.reset_index(drop=True)
 
 
     print('data_input length:{}'.format(len(data_input.index)) )
@@ -147,9 +149,9 @@ for num_input in range(min_length,max_length+1):
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs + 1), train_loss, label='train_loss')
     plt.plot(np.arange(1, epochs + 1), test_loss, label='test_loss')
-    plt.title('Loss vs Iterations in Training and Testing Set for Stateful LSTM  Length:' + str(num_input))
-    plt.xlabel('Iterations')
-    plt.ylabel('Loss')
+    plt.title('Loss vs Epochs in Training and Testing Set for Stateful LSTM  Length:' + str(num_input))
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss(MSE)')
     x_label = range(1, 11)
     plt.xticks(x_label)
     plt.legend()
@@ -196,9 +198,9 @@ for num_input in range(min_length,max_length+1):
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs + 1), train_loss, label='train_loss')
     plt.plot(np.arange(1, epochs + 1), test_loss, label='test_loss')
-    plt.title('Loss vs Iterations in Training and Testing Set for Stateless LSTM  Length:' + str(num_input))
-    plt.xlabel('Iterations')
-    plt.ylabel('Loss')
+    plt.title('Loss vs Epochs in Training and Testing Set for Stateless LSTM  Length:' + str(num_input))
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss(MSE)')
     x_label = range(1, 11)
     plt.xticks(x_label)
     plt.legend()

@@ -2,17 +2,18 @@ from __future__ import print_function
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from keras.optimizers import RMSprop
+from keras.optimizers import RMSprop,Adam
 from keras.models import Sequential
 from keras.layers import Dense, LSTM, SimpleRNN, Activation,Embedding
 from sklearn.metrics import mean_squared_error
-
+from numpy.random import seed
+seed(0)
 
 # Create model
 def create_rnn_model(stateful):
     ##### YOUR MODEL GOES HERE #####
     model = Sequential()
-    model.add(SimpleRNN(20, stateful=stateful, return_sequences=False, batch_input_shape=(1,length,1), activation='relu'))
+    model.add(SimpleRNN(20, stateful=stateful, return_sequences=False, batch_input_shape=(1, length, 1), activation='relu'))
     model.add(Dense(1))
 
     return model
@@ -38,12 +39,12 @@ def split_data(x, y, ratio=0.8):
     # some reshaping
     ##### RESHAPE YOUR DATA BASED ON YOUR MODEL #####
     x_train = x_train.values
-    x_train = x_train.reshape(to_train,length,1)
+    x_train = x_train.reshape(to_train, length, 1)
     y_train = y_train.values
     y_train = y_train.reshape(to_train, 1)
 
     x_test = x_test.values
-    x_test = x_test.reshape(len(x.index) - to_train,length,1)
+    x_test = x_test.reshape(len(x.index) - to_train, length, 1)
     y_test = y_test.values
     y_test = y_test.reshape(len(x.index) - to_train, 1)
 
@@ -81,19 +82,22 @@ for num_input in range(min_length, max_length + 1):
     # convert numpy arrays to pandas dataframe
     data_input = pd.DataFrame(noisy_data)
     expected_output = pd.DataFrame(smooth_data)
-    empty = pd.DataFrame(data=None, columns=range(0, length))
+
     # when length > 1, arrange input sequences
     if length > 1:
         # ARRANGE YOUR DATA SEQUENCES
         # lose L-1 input data
-        for i in range(length - 1, len(data_input)):
+        empty = pd.DataFrame(data=None, columns=range(0, length))
+        for i in range(length-1, len(data_input)):
             list = []
-            for j in range(i, i - length, -1):
+            for j in range(i, i-length, -1):
                 list.append(data_input.iloc[j][0])
-            empty.loc[i - 1] = list
-        data_input = empty  # lose L-1 output data
-        for i in range(length - 1):
+            empty.loc[i - length + 1] = list
+        data_input = empty
+        # lose L-1 output data
+        for i in range(length-1):
             expected_output = expected_output.drop(i)
+            expected_output = expected_output.reset_index(drop=True)
 
     print('data_input length:{}'.format(len(data_input.index)))
     # Split training and test data: use first 80% of data points as training and remaining as test
@@ -117,9 +121,9 @@ for num_input in range(min_length, max_length + 1):
     # Create the stateful model
     print('Creating Stateful Vanilla RNN Model...')
     model_rnn_stateful = create_rnn_model(stateful=True)
-
-    rmsprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.00005)
-    model_rnn_stateful.compile(optimizer=rmsprop, loss='mean_squared_error')
+    #rmsprop = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.00005)
+    adam = Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.00005)
+    model_rnn_stateful.compile(optimizer=adam, loss='mean_squared_error')
 
     # Train the model
     print('Training')
@@ -143,14 +147,15 @@ for num_input in range(min_length, max_length + 1):
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs + 1), train_loss, label='train_loss')
     plt.plot(np.arange(1, epochs + 1), test_loss, label='test_loss')
-    plt.title('Loss vs Iterations in Training and Testing Set for Stateful RNN  Length:' + str(num_input))
-    plt.xlabel('Iterations')
-    plt.ylabel('Loss')
+    plt.title('Loss vs Epochs in Training and Testing Set for Stateful RNN  Length:' + str(num_input))
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss(MSE)')
     x_label = range(1, 11)
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
-    plt.show()
+    plt.savefig('/Users/martin_yan/Desktop/part2_stateful_%d.jpg' % length, dpi=200)
+    #plt.show()
 
     # Save your model weights with following convention:
     # For example length 1 input sequences model filename
@@ -176,7 +181,7 @@ for num_input in range(min_length, max_length + 1):
     # Create the stateless model
     print('Creating stateless Vanilla RNN Model...')
     model_rnn_stateless = create_rnn_model(stateful=False)
-    model_rnn_stateless.compile(optimizer=rmsprop, loss='mean_squared_error')
+    model_rnn_stateless.compile(optimizer=adam, loss='mean_squared_error')
 
     # Train the model
     print('Training')
@@ -192,14 +197,15 @@ for num_input in range(min_length, max_length + 1):
     plt.figure(figsize=(8, 5))
     plt.plot(np.arange(1, epochs + 1), train_loss, label='train_loss')
     plt.plot(np.arange(1, epochs + 1), test_loss, label='test_loss')
-    plt.title('Loss vs Iterations in Training and Testing Set for Stateless RNN  Length:' + str(num_input))
-    plt.xlabel('Iterations')
-    plt.ylabel('Loss')
+    plt.title('Loss vs Epochs in Training and Testing Set for Stateless RNN  Length:' + str(num_input))
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss(MSE)')
     x_label = range(1, 11)
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
-    plt.show()
+    plt.savefig('/Users/martin_yan/Desktop/part2_stateless_%d.jpg' % length, dpi=200)
+    #plt.show()
 
 # Save your model weights with following convention:
     # For example length 1 input sequences model filename
@@ -244,4 +250,5 @@ x_label = range(1, 11)
 plt.xticks(x_label)
 plt.legend()
 plt.grid()
-plt.show()
+plt.savefig('/Users/martin_yan/Desktop/part2_rmse.jpg', dpi=200)
+#plt.show()

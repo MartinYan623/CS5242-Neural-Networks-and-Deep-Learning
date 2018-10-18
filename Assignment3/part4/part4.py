@@ -100,19 +100,21 @@ for num_input in range(min_length,max_length+1):
     data_input = pd.DataFrame(noisy_data)
     expected_output = pd.DataFrame(smooth_data)
 
-    empty = pd.DataFrame(data=None, columns=range(0, length))
     # when length > 1, arrange input sequences
     if length > 1:
         # ARRANGE YOUR DATA SEQUENCES
         # lose L-1 input data
-        for i in range(length - 1, len(data_input)):
+        empty = pd.DataFrame(data=None, columns=range(0, length))
+        for i in range(length-1, len(data_input)):
             list = []
-            for j in range(i, i - length, -1):
+            for j in range(i, i-length, -1):
                 list.append(data_input.iloc[j][0])
-            empty.loc[i - 1] = list
-        data_input = empty  # lose L-1 output data
-        for i in range(length - 1):
+            empty.loc[i - length + 1] = list
+        data_input = empty
+        # lose L-1 output data
+        for i in range(length-1):
             expected_output = expected_output.drop(i)
+            expected_output = expected_output.reset_index(drop=True)
 
 
     print('data_input length:{}'.format(len(data_input.index)) )
@@ -236,11 +238,11 @@ plt.title('Input - First 100 data points')
 
 # Plot and save rmse vs Input Length
 plt.figure()
-plt.plot(np.arange(min_length,max_length+1), fc_rmse_list, c='black', label='FC')
-plt.plot(np.arange(min_length,max_length+1), rnn_stateful_rmse_list, c='blue', label='Stateful RNN')
-plt.plot(np.arange(min_length,max_length+1), rnn_stateless_rmse_list, c='cyan', label='Stateless RNN')
-plt.plot(np.arange(min_length,max_length+1), lstm_stateful_rmse_list, c='red', label='Stateful LSTM')
-plt.plot(np.arange(min_length,max_length+1), lstm_stateless_rmse_list, c='magenta', label='Stateless LSTM')
+plt.plot(np.arange(min_length, max_length+1), fc_rmse_list, c='black', label='FC')
+plt.plot(np.arange(min_length, max_length+1), rnn_stateful_rmse_list, c='blue', label='Stateful RNN')
+plt.plot(np.arange(min_length, max_length+1), rnn_stateless_rmse_list, c='cyan', label='Stateless RNN')
+plt.plot(np.arange(min_length, max_length+1), lstm_stateful_rmse_list, c='red', label='Stateful LSTM')
+plt.plot(np.arange(min_length, max_length+1), lstm_stateless_rmse_list, c='magenta', label='Stateless LSTM')
 plt.title('RMSE vs Input Length in Test Set')
 plt.xlabel('Length of Input Sequences')
 plt.ylabel('RMSE')
