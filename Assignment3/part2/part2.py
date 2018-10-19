@@ -154,8 +154,8 @@ for num_input in range(min_length, max_length + 1):
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
-    plt.savefig('/Users/martin_yan/Desktop/part2_stateful_%d.jpg' % length, dpi=200)
-    #plt.show()
+    #plt.savefig('/Users/martin_yan/Desktop/part2_stateful_%d.jpg' % length, dpi=200)
+    plt.show()
 
     # Save your model weights with following convention:
     # For example length 1 input sequences model filename
@@ -204,8 +204,8 @@ for num_input in range(min_length, max_length + 1):
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
-    plt.savefig('/Users/martin_yan/Desktop/part2_stateless_%d.jpg' % length, dpi=200)
-    #plt.show()
+    #plt.savefig('/Users/martin_yan/Desktop/part2_stateless_%d.jpg' % length, dpi=200)
+    plt.show()
 
 # Save your model weights with following convention:
     # For example length 1 input sequences model filename
@@ -250,5 +250,5 @@ x_label = range(1, 11)
 plt.xticks(x_label)
 plt.legend()
 plt.grid()
-plt.savefig('/Users/martin_yan/Desktop/part2_rmse.jpg', dpi=200)
-#plt.show()
+#plt.savefig('/Users/martin_yan/Desktop/part2_rmse.jpg', dpi=200)
+plt.show()

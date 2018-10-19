@@ -250,6 +250,7 @@ x_label = range(1, 11)
 plt.xticks(x_label)
 plt.legend()
 plt.grid()
+plt.savefig('/Users/martin_yan/Desktop/part4_rmse.jpg', dpi=200)
 plt.show()
 
 

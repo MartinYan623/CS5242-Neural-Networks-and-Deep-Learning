@@ -5,7 +5,9 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, LSTM, SimpleRNN
 from sklearn.metrics import mean_squared_error
-from keras.optimizers import RMSprop
+from keras.optimizers import RMSprop,Adam
+from numpy.random import seed
+seed(10)
 
 # Create model
 def create_lstm_model(stateful):
@@ -122,9 +124,9 @@ for num_input in range(min_length,max_length+1):
     # Create the stateful model
     print('Creating Stateful LSTM Model...')
     model_lstm_stateful = create_lstm_model(stateful=True)
-
-    rmsprop = RMSprop(lr=0.0001, rho=0.9, epsilon=1e-08, decay=0.00005)
-    model_lstm_stateful.compile(optimizer=rmsprop, loss='mean_squared_error')
+    #rmsprop = RMSprop(lr=0.0001, rho=0.9, epsilon=1e-08, decay=0.00005)
+    adam = Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.00005)
+    model_lstm_stateful.compile(optimizer=adam, loss='mean_squared_error')
 
     # Train the model
     print('Training')
@@ -156,6 +158,7 @@ for num_input in range(min_length,max_length+1):
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
+    #plt.savefig('/Users/martin_yan/Desktop/part3_stateful_%d.jpg' % length, dpi=200)
     plt.show()
 
     # Save your model weights with following convention:
@@ -181,7 +184,7 @@ for num_input in range(min_length,max_length+1):
     # Create the stateless model
     print('Creating stateless LSTM Model...')
     model_lstm_stateless = create_lstm_model(stateful=False)
-    model_lstm_stateless.compile(optimizer=rmsprop, loss='mean_squared_error')
+    model_lstm_stateless.compile(optimizer=adam, loss='mean_squared_error')
 
     # Train the model
     print('Training')
@@ -205,6 +208,7 @@ for num_input in range(min_length,max_length+1):
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
+    #plt.savefig('/Users/martin_yan/Desktop/part3_stateless_%d.jpg' % length, dpi=200)
     plt.show()
 
     # Save your model weights with following convention:
@@ -257,6 +261,7 @@ x_label = range(1, 11)
 plt.xticks(x_label)
 plt.legend()
 plt.grid()
+#plt.savefig('/Users/martin_yan/Desktop/part3_rmse.jpg', dpi=200)
 plt.show()
 
 
