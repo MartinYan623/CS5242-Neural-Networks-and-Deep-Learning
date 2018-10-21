@@ -70,3 +70,5 @@ Improved accuracy for mnist data is 98.2%. for cifar10 data set, improved accura
 10.11 complete assignment 3 part 1
 
 10.12 complete assignment 3 part234
+
+10.21 complete assignment 3 report

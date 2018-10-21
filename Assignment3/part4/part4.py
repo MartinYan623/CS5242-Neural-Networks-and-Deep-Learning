@@ -171,7 +171,7 @@ for num_input in range(min_length,max_length+1):
     # Predict
     print('Predicting')
     ##### PREDICT #####
-    x_test_fc= x_test.reshape(len(data_input.index) - int(len(data_input.index) * 0.8),1,length)
+    x_test_fc= x_test.reshape(len(data_input.index) - int(len(data_input.index) * 0.8), 1, length)
     predicted_fc = model_fc.predict(x_test_fc, batch_size=batch_size)
     predicted_fc= predicted_fc.reshape(len(data_input.index) - int(len(data_input.index) * 0.8), 1)
     ##### CALCULATE RMSE #####
@@ -250,7 +250,7 @@ x_label = range(1, 11)
 plt.xticks(x_label)
 plt.legend()
 plt.grid()
-plt.savefig('/Users/martin_yan/Desktop/part4_rmse.jpg', dpi=200)
+#plt.savefig('/Users/martin_yan/Desktop/part4_rmse.jpg', dpi=200)
 plt.show()
 
 

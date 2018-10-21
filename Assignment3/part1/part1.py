@@ -141,7 +141,7 @@ for num_input in range(min_length, max_length+1):
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
-    plt.savefig('/Users/martin_yan/Desktop/part1_%d.jpg' % length, dpi=200)
+    #plt.savefig('/Users/martin_yan/Desktop/part1_%d.jpg' % length, dpi=200)
     plt.show()
 
     # Save your model weights with following convention:
@@ -181,7 +181,7 @@ plt.xticks(x_label)
 plt.ylabel('RMSE')
 plt.legend()
 plt.grid()
-plt.savefig('/Users/martin_yan/Desktop/part1_rmse.jpg', dpi=200)
+#plt.savefig('/Users/martin_yan/Desktop/part1_rmse.jpg', dpi=200)
 plt.show()
 
 
