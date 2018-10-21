@@ -7,7 +7,7 @@ from keras.layers import Dense, LSTM, SimpleRNN
 from sklearn.metrics import mean_squared_error
 from keras.optimizers import RMSprop,Adam
 from numpy.random import seed
-seed(10)
+#seed(10)
 
 # Create model
 def create_lstm_model(stateful):

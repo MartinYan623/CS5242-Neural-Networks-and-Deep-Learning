@@ -7,7 +7,7 @@ from keras.layers import Dense, LSTM, SimpleRNN, Activation
 from sklearn.metrics import mean_squared_error
 from keras.optimizers import RMSprop,Adam
 from numpy.random import seed
-seed(1)
+#seed(1)
 
 # Create model
 def create_fc_model():

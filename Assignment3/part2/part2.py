@@ -7,7 +7,7 @@ from keras.models import Sequential
 from keras.layers import Dense, LSTM, SimpleRNN, Activation,Embedding
 from sklearn.metrics import mean_squared_error
 from numpy.random import seed
-seed(0)
+#seed(0)
 
 # Create model
 def create_rnn_model(stateful):
