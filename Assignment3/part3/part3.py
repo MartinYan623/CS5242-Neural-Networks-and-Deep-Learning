@@ -5,7 +5,7 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, LSTM, SimpleRNN
 from sklearn.metrics import mean_squared_error
-from keras.optimizers import RMSprop,Adam
+from keras.optimizers import RMSprop, Adam
 from numpy.random import seed
 #seed(10)
 
