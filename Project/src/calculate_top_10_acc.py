@@ -1,8 +1,8 @@
 import numpy as np
 import sys
 
-ground_truth_filename = 'test_ground_truth_example.txt'
-predictions_filename = 'test_predictions_example.txt'
+ground_truth_filename = '../data/result/test_ground_truth_example.txt'
+predictions_filename = '../data/result/test_predictions_lstm_example.txt'
 
 ground_truth_arr = np.loadtxt(ground_truth_filename, dtype=np.int, delimiter='\t', skiprows=1)
 predictions_arr = np.loadtxt(predictions_filename, dtype=np.int, delimiter='\t', skiprows=1)
@@ -32,6 +32,8 @@ for i in range(num_predictions):
 	if truth_lig_id in lig_list:
 		num_correct_pred += 1
 
+print(num_correct_pred)
+print(num_samples)
 acc = num_correct_pred / num_samples
 
 print('accuracy:{:.3f}'.format(acc))

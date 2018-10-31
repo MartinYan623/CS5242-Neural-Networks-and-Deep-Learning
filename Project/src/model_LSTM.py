@@ -77,22 +77,43 @@ if __name__ == '__main__':
     model = create_lstm_model(stateful=False)
     adam = Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.00005)
     model.compile(loss='mean_squared_error', optimizer=adam)
-    hist = model.fit(x=x_train, y=y_train, epochs=1, batch_size=1, verbose=1, validation_data=(x_valid, y_valid))
+    history = model.fit(x=x_train, y=y_train, epochs=10, batch_size=32, verbose=1, validation_data=(x_valid, y_valid))
 
-    # plot validation result
-    # df = DataFrame(data=d)
-    # epoch = df.index.map(lambda x: x + 1)
-    # df['epoch'] = epoch
-    # plot_hist(df, 'lstm', 'acc')
-    # plot_hist(df, 'lstm', 'loss')
+    # plot loss
+    train_loss = history.history['loss']
+    valid_loss = history.history['val_loss']
+    # loss = np.sqrt(loss)
+    # val_loss = np.sqrt(val_loss)
+    plt.figure(figsize=(8, 5))
+    plt.plot(np.arange(1, 10 + 1), train_loss, label='train_loss')
+    plt.plot(np.arange(1, 10 + 1), valid_loss, label='valid_loss')
+    plt.title('Loss vs Epochs in Training and Validation Set for LSTM')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss(MSE)')
+    x_label = range(1, 11)
+    plt.xticks(x_label)
+    plt.legend()
+    plt.grid()
+    plt.savefig('../data/result/lstm_validation.jpg', dpi=200)
 
-    # predict testing data
-    predicted_lstm = model.predict(x_test, batch_size=1)
+
+    #predict validation data
+    predicted_lstm = model.predict(x_valid, batch_size=1)
+
+    # create answer for validation data
+    result = []
+    for i in range(300):
+        tmp = []
+        tmp.append(int(i+1))
+        tmp.append(int(i+1))
+        result.append(tmp)
+    np.savetxt('../data/result/test_ground_truth_example.txt', result, delimiter='\t', newline='\n', comments='',
+                   header='pro_id\tlig_id', fmt='%d')
+
 
     # get the prediction result of testing data set
-    predicted_lstm = predicted_lstm.reshape(824, 824)
-    print('The result is:')
-    print(predicted_lstm)
+    predicted_lstm = predicted_lstm.reshape(300, 300)
+
 
     # save as txt file
     result = []
@@ -104,6 +125,29 @@ if __name__ == '__main__':
         nl.append(int(i + 1))
         nl.reverse()
         result.append(nl)
+
+    np.savetxt('../data/result/test_predictions_lstm_example.txt', result, delimiter='\t', newline='\n', comments='',
+               header='pro_id\tlig1_id\tlig2_id\tlig3_id\tlig4_id\tlig5_id\tlig6_id\tlig7_id\tlig8_id\tlig9_id\tlig10_id',
+               fmt='%d')
+   
+    ############################
+    # predict testing data
+    predicted_lstm = model.predict(x_test, batch_size=1)
+
+    # get the prediction result of testing data set
+    predicted_lstm = predicted_lstm.reshape(300, 300)
+
+    # save as txt file
+    result = []
+    for i in range(len(predicted_lstm)):
+        a = np.array(predicted_lstm[i, :])
+        line = (heapq.nlargest(10, range(len(a)), a.take))
+        # nlargest function returns value from 0, add 1 to change to start from 1
+        nl = [i + 1 for i in line]
+        nl.append(int(i + 1))
+        nl.reverse()
+        result.append(nl)
+
     np.savetxt('../data/result/test_predictions_lstm.txt', result, delimiter='\t', newline='\n', comments='',
                header='pro_id\tlig1_id\tlig2_id\tlig3_id\tlig4_id\tlig5_id\tlig6_id\tlig7_id\tlig8_id\tlig9_id\tlig10_id',
                fmt='%d')
