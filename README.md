@@ -33,6 +33,21 @@ CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                        |-----part3|-------part3.py
                                                        |-----part4|-------part4.py
 
+                                        --- Project|-----data
+                                                   |-----src|-------calculate_top_10_acc.py
+                                                            |-------kdtree.py
+                                                            |-------model_3DCNN.py
+                                                            |-------model_lstm.py
+                                                            |-------model_MLP.py
+                                                            |-------MyFlatten.py
+                                                            |-------preprocess_test.py
+                                                            |-------preprocess_train.py
+                                                            |-------read_pdb_file.py
+                                                            |-------visualization.py
+                                                            |-------vote.py
+                                                   |-----figs
+                                                   |-----project_description.pdf
+
 There are some logs about my assignments as follows:
 
 8.30 Complete the warm up task. After watching the video on coursera, try to build my first neural network without hidden layer.
@@ -67,8 +82,10 @@ Improved accuracy for mnist data is 98.2%. for cifar10 data set, improved accura
 
 9.23 Write the report for both problem.
 
-10.11 complete assignment 3 part 1
+10.11 Complete assignment 3 part 1
 
-10.12 complete assignment 3 part234
+10.12 Complete assignment 3 part234
 
-10.21 complete assignment 3 report
+10.21 Complete assignment 3 report
+
+11.2 Complete final project

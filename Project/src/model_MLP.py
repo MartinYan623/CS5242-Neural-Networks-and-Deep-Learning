@@ -1,18 +1,15 @@
-import pickle
-import numpy as np
 import matplotlib.pyplot as plt
 from keras.optimizers import Adam
 from keras.models import Sequential
 from keras.layers import Dense, Masking
 from keras.preprocessing import sequence
 from MyFlatten import MyFlatten
-from pandas.core.frame import DataFrame
-import heapq
-from preprocess import *
-from pretest import *
-
+from preprocess_train import *
+from preprocess_test import *
 
 def create_clique_data():
+
+
     with open('../data/middle_data/train_input.bin', 'rb') as f:
         train_input = pickle.load(f)
     with open('../data/middle_data/train_output.bin', 'rb') as f:
@@ -22,13 +19,13 @@ def create_clique_data():
         tree_list = pickle.load(f)
     print('Tree info loaded successfully!')
 
-    valid_input, valid_output = create_mlp_valid(tree_list, 2700)
+    valid_input, valid_output = create_mlp_lstm_valid(tree_list, 2700)
 
     with open('../data/middle_data/tree_list_test.bin', 'rb') as f:
         tree_list_test = pickle.load(f)
     print('Tree info loaded successfully!')
 
-    test_input = create_mlp_test(tree_list_test)
+    test_input = create_mlp_lstm_test(tree_list_test)
 
     new_train_input = []
     new_train_output = []
@@ -39,7 +36,7 @@ def create_clique_data():
     # for i in 2700
     for i in range(len(train_input)):
         lig = train_input[i]
-        temp = lig.reshape(len(lig) * 20, 1)
+        temp = lig.reshape(len(lig)*20, 1)
         new_train_input.append(temp)
         new_train_output.append([train_output[i]])
 
@@ -49,14 +46,14 @@ def create_clique_data():
         new_valid_input.append(temp)
         new_valid_output.append([valid_output[i]])
 
+
     for i in range(len(test_input)):
         lig = test_input[i]
         temp = lig.reshape(len(lig) * 20, 1)
         new_test_input.append(temp)
 
-    return np.array(new_train_input), np.array(new_train_output), np.array(new_valid_input), np.array(new_valid_output), \
+    return np.array(new_train_input), np.array(new_train_output), np.array(new_valid_input), np.array(new_valid_output),\
            np.array(new_test_input)
-
 
 def model_mlp():
     model = Sequential()
@@ -67,7 +64,6 @@ def model_mlp():
     model.add(MyFlatten())
     model.add(Dense(1, activation='tanh'))
     return model
-
 
 if __name__ == '__main__':
 
@@ -85,9 +81,9 @@ if __name__ == '__main__':
     model.compile(loss='mean_squared_error', optimizer=adam, metrics=['accuracy'])
     history = model.fit(x=x_train, y=y_train, epochs=10, batch_size=1, verbose=1, validation_data=(x_valid, y_valid))
 
-    filename = 'mlp_model.h5'
+    filename = '../model/mlp.h5'
     model.save_weights(filename)
-    # model.load_weights(filename)
+    #model.load_weights(filename)
 
     # plot loss
     train_loss = history.history['loss']
@@ -102,20 +98,21 @@ if __name__ == '__main__':
     plt.xticks(x_label)
     plt.legend()
     plt.grid()
-    plt.savefig('../data/result/mlp_validation.jpg', dpi=200)
-
-    # predict validation data
+    plt.savefig('../figs/mlp_validation.jpg', dpi=200)
+    
+    #predict validation data
     predicted_mlp = model.predict(x_valid, batch_size=1)
 
     # create answer for validation data
     result = []
     for i in range(300):
         tmp = []
-        tmp.append(int(i + 1))
-        tmp.append(int(i + 1))
+        tmp.append(int(i+1))
+        tmp.append(int(i+1))
         result.append(tmp)
     np.savetxt('../data/result/test_ground_truth_example.txt', result, delimiter='\t', newline='\n', comments='',
-               header='pro_id\tlig_id', fmt='%d')
+                   header='pro_id\tlig_id', fmt='%d')
+
 
     # get the prediction result of testing data set
     predicted_mlp = predicted_mlp.reshape(300, 300)
