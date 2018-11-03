@@ -5,6 +5,7 @@ Warm up task is not graded, for another three assignment, and each one is 8% of 
 The structure of code:
 CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                    |---------util.py
+
                                         --- Assignment1|-----code|----checkgradient.py
                                                                  |----neuralnet_layers.py
                                                                  |----neuralnet_model.py
@@ -17,6 +18,7 @@ CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                        |-----Question_1
                                                        |-----Question_2
                                                        |-----reference
+
                                         --- Assignment2|-----part1|------data
                                                                   |------source|------problem1.py
                                                                                |------warmup.py
@@ -27,6 +29,7 @@ CS5242 Neural Network and Deep Learning --- Warm Up|---------data
                                                                                |------cifar10.py
                                                                                |------example_network.py
                                                                                |------problem2_task1.py
+
                                         --- Assignment3|-----filter_data
                                                        |-----part1|-------part1.py
                                                        |-----part2|-------part2.py
